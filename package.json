@@ -1,6 +1,6 @@
 {
   "name": "sapcc-hac-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SAP Commerce Cloud HAC client – execute Groovy scripts and FlexibleSearch queries from CLI or Node.js",
   "main": "src/index.js",
   "bin": {
