@@ -1,8 +1,7 @@
 'use strict';
 
-const axios   = require('axios');
-const https   = require('https');
-const cheerio = require('cheerio');
+const axios = require('axios');
+const https = require('https');
 
 /**
  * HacClient – Hybris Administration Console client.
@@ -322,12 +321,14 @@ class HacClient {
   // ─────────────────────────────────────────────
 
   _extractCsrf(html) {
-    const $ = cheerio.load(html);
-    return (
-      $('meta[name="_csrf"]').attr('content') ||
-      $('input[name="_csrf"]').attr('value')  ||
-      null
-    );
+    // <meta name="_csrf" content="TOKEN"/>
+    const meta = html.match(/<meta[^>]+name=["']_csrf["'][^>]+content=["']([^"']+)["']/i)
+               || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']_csrf["']/i);
+    if (meta) return meta[1];
+    // <input type="hidden" name="_csrf" value="TOKEN"/>
+    const input = html.match(/<input[^>]+name=["']_csrf["'][^>]+value=["']([^"']+)["']/i)
+                || html.match(/<input[^>]+value=["']([^"']+)["'][^>]+name=["']_csrf["']/i);
+    return input ? input[1] : null;
   }
 
   _isLoginPage(html) {
