@@ -22,7 +22,15 @@
     "sap",
     "commerce",
     "cli",
-    "scripting"
+    "scripting",
+    "sap-commerce-cloud",
+    "hybris-administration-console",
+    "ccv2",
+    "b2b",
+    "ecommerce",
+    "devtools",
+    "developer-tools",
+    "automation"
   ],
   "author": {
     "name": "Youssef El Jaoujat",
