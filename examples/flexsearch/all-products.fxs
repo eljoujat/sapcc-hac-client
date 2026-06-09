@@ -1,0 +1,1 @@
+SELECT {pk},{code},{name},{catalogVersion} FROM {Product} ORDER BY {code} ASC

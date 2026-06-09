@@ -1,0 +1,5 @@
+SELECT {u:uid},{u:name},{u:email},{ug:uid} AS usergroup
+FROM   {Customer AS u JOIN PrincipalGroupRelation AS pgr ON {pgr:source} = {u:pk}
+        JOIN UserGroup AS ug ON {ug:pk} = {pgr:target}}
+WHERE  {u:loginDisabled} = 0
+ORDER  BY {u:uid}

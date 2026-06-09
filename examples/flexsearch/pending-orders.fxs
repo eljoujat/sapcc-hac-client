@@ -1,0 +1,6 @@
+SELECT {code},{status},{totalPrice},{currency},{user}
+FROM   {Order}
+WHERE  {status} IN (
+         {{ SELECT {pk} FROM {OrderStatus} WHERE {code} = 'CREATED' }}
+       )
+ORDER  BY {date} DESC

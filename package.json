@@ -1,0 +1,65 @@
+{
+  "name": "sapcc-hac-client",
+  "version": "1.0.0",
+  "description": "SAP Commerce Cloud HAC client – execute Groovy scripts and FlexibleSearch queries from CLI or Node.js",
+  "main": "src/index.js",
+  "bin": {
+    "hac": "./bin/hac.js"
+  },
+  "scripts": {
+    "start": "node bin/hac.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "sapcommerce",
+    "hybris",
+    "hac",
+    "groovy",
+    "flexiblesearch",
+    "flexsearch",
+    "sap",
+    "commerce",
+    "cli",
+    "scripting"
+  ],
+  "author": {
+    "name": "Youssef El Jaoujat",
+    "email": "youssef.el.jaoujat@gmail.com",
+    "url": "https://github.com/eljoujat"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eljoujat/sapcc-hac-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eljoujat/sapcc-hac-client/issues"
+  },
+  "homepage": "https://github.com/eljoujat/sapcc-hac-client#readme",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "examples/",
+    ".env.example",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ]
+}
